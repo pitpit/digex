@@ -2,8 +2,12 @@ silex-sandbox
 =============
 
 silex-sandbox est une application Silex préconfigurée permettant d'initialiser
-rapidement un projet. Pour en savoir plus, veuillez vous conformer à la documentation
+rapidement un projet.
+
+Pour en savoir plus sur Silex, veuillez vous conformer à la documentation
 https://github.com/digitas/silex-sandbox/blob/master/docs/guidelines-silex.md
+
+silex-sandbox utilise digex : https://github.com/digitas/digex
 
 Authors
 -------
