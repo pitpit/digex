@@ -1,0 +1,6 @@
+app:
+  debug: false
+  extensions:
+    twig: true
+    url_generator: true
+    monolog: true

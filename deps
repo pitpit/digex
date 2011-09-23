@@ -1,0 +1,22 @@
+[twig]
+    git=http://github.com/fabpot/Twig.git
+    version=v1.1.0
+
+[monolog]
+    git=http://github.com/Seldaek/monolog.git
+
+;; Add Doctrine DBAL to Silex
+
+;[doctrine-common]
+    git=http://github.com/doctrine/common.git
+
+;[doctrine-dbal]
+    git=http://github.com/doctrine/dbal.git
+
+;; Add facebook SDK to Silex
+
+;[faceboo]
+;    git=https://github.com/pitpit/Faceboo
+
+;[digex]
+;    git=https://pitpit@github.com/digitas/Digex.git
