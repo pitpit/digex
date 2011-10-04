@@ -2,8 +2,6 @@
 # Silex
 # ----------------------------------------------------------------------
 
-#SetEnv ENV dev
-
 <IfModule mod_rewrite.c>
     RewriteEngine On
 

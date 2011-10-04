@@ -1,6 +1,7 @@
 app:
   debug: false
-  extensions:
+  providers:
     twig: true
     url_generator: true
     monolog: true
+    session: true

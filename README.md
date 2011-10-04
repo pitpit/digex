@@ -14,6 +14,12 @@ Authors
 
 * Damien Pitard <dpitard at digitas dot fr>
 
+Changelog
+---------
+
+* no more phar
+* updated to last Silex version
+
 Todo
 ----
 ...

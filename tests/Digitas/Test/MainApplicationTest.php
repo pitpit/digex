@@ -1,18 +1,18 @@
 <?php
 
+namespace Digitas\Test;
+
 use Silex\WebTestCase;
 
 /**
  * @author Damien Pitard <dpitard at digitas.fr>
  * @version $Id$
  */
-class AppTest extends WebTestCase
+class MainApplicationTest extends WebTestCase
 {
     public function createApplication()
     {
-        putenv('ENV=test');
-        
-        return require __DIR__.'/../src/app.php';
+        return new Digitas\MainApplication(__DIR__.'/../../../app', __DIR__.'/../../../vendor');
     }
     
     public function testHomepage()

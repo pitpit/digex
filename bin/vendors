@@ -81,6 +81,8 @@ foreach ($deps as $name => $dep) {
     }
 
     system(sprintf('cd %s && git fetch origin && git reset --hard %s', escapeshellarg($installDir), escapeshellarg($rev)));
+    
+    system(sprintf('cd %s && git submodule update --init', escapeshellarg($installDir)));
 
     if ('update' === $command) {
         ob_start();
