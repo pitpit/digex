@@ -13,6 +13,13 @@ use Silex\ControllerProviderInterface;
  */
 class MainControllerProvider extends StandardControllerProvider
 {
+    public function register(Application $app)
+    {
+        parent::register($app);
+        
+        //register your providers here
+    }
+    
     public function connect(Application $app)
     {
         $controllers = new ControllerCollection();
