@@ -3,5 +3,5 @@ app:
   providers:
     twig: true
     url_generator: true
-    monolog: true
     session: true
+    monolog: false
