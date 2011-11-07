@@ -74,12 +74,11 @@ Si votre projet
 Pour initialiser un nouveau projet à partir de cette sandbox, veuillez faire une
 copie du repository :
 
-    git clone --mirror https://<USERNAME>@github.com/digitas/SilexSandbox <YOUR_PROJECT>
+    git clone https://<USERNAME>@github.com/digitas/SilexSandbox <YOUR_PROJECT>
 
-Si vous utiliser Git pour votre project, faites un premier commit :
+ou télécharger directement le zip :
 
-    cd <YOUR_PROJECT>
-    git commit -a -m "initial import"
+    https://github.com/digitas/silex-sandbox/zipball/master
 
 ### Installation des outils requis
 
