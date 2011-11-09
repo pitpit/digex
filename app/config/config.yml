@@ -5,3 +5,10 @@ app:
     url_generator: true
     session: true
     monolog: false
+    doctrine-dbal: true
+
+db:
+  dbname:   mydb
+  host:     localhost
+  user:     root
+  password: root
