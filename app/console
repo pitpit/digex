@@ -1,0 +1,25 @@
+#!/usr/bin/env php
+<?php
+
+/**
+ * @author Damien Pitard <dpitard at digitas.fr>
+ * @version $Id$
+ */
+
+require_once __DIR__.'/../src/autoload.php';
+
+use Symfony\Component\Console\Input\ArgvInput;
+use Silex\Application;
+use Digex\Console\Console;
+use Digex\Provider\ConsoleServiceProvider;
+
+$input = new ArgvInput();
+
+if ($input->hasParameterOption(array('--no-debug', ''))
+
+$app = new Application();
+$app['debug'] = !$input->hasParameterOption(array('--no-debug', ''));
+$app['env'] = $input->getParameterOption(array('--env', '-e'), getenv('SYMFONY_ENV') ?: 'dev');
+
+$app->register(new ConsoleServiceProvider());
+$app['console']->run();

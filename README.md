@@ -5,9 +5,7 @@ silex-sandbox est une application Silex préconfigurée permettant d'initialiser
 rapidement un projet.
 
 Pour en savoir plus sur Silex, veuillez vous conformer à la documentation
-https://github.com/digitas/silex-sandbox/blob/master/docs/guidelines-silex.md
-
-silex-sandbox utilise digex : https://github.com/digitas/digex
+https://github.com/digitas/silex-sandbox/blob/master/doc/guidelines-silex.md
 
 Authors
 -------
@@ -57,8 +55,6 @@ PHP Extensions :
 * pcre
 * cURL
 
-Ces pré-requis peuvent être transmis à l'hébergeur tel-quel.
-
 Pour valider la configuration serveur, un fichier de check est accessible en ligne
 sur l'instance à l'adresse <http://.../check.php>. Ce script est protégé sur les
 IPs interne (192.168.*) et locales (127.0.0.1, 10.0.2.2), donc il peut être livré
@@ -71,12 +67,7 @@ Getting started
 
 Si votre projet 
 
-Pour initialiser un nouveau projet à partir de cette sandbox, veuillez faire une
-copie du repository :
-
-    git clone https://<USERNAME>@github.com/digitas/SilexSandbox <YOUR_PROJECT>
-
-ou télécharger directement le zip :
+Pour initialiser un nouveau projet à partir de cette sandbox, télécharger l'archive :
 
     https://github.com/digitas/silex-sandbox/zipball/master
 
@@ -106,7 +97,6 @@ Installer le vhost suivant
     <VirtualHost *:80>
         ServerName [HOSTNAME]
         DocumentRoot "[ROOT_DIR]/web"
-        #SetEnv ENV dev
 
         <Directory "[ROOT_DIR]/web">
             AllowOverride all
@@ -114,12 +104,6 @@ Installer le vhost suivant
             Allow from all
         </Directory>
     </VirtualHost>
-
-### Initialisation des librairies externes
-
-Lancez la commande suivante à la racine de Silex
-
-    php bin/vendors install
 
 ### Configuration de Silex Sandbox
 
@@ -134,11 +118,7 @@ environnement donnée dans les fichiers :
 * config_dev.yml
 * config_test.yml
 
-Pour déclarer à votre instance dans quel environnement elle doit s'executer
-ajouter la directives suivantes au vhost ou au fichier web/.htaccess (dans ce
-cas, ne jamais commiter cette directive) :
-
-    SetEnv ENV dev
+Pour lancer l'instance dans l'environnement de dev, charger l'URL http://.../index_dev.php
 
 ### Arborescence type
 
@@ -155,17 +135,7 @@ cas, ne jamais commiter cette directive) :
         * x.x.x-TO-x.x.x.sql : script de migration de version d'application
     * logs : contenant les logs applicatifs  (auto-généré)
     * cache : contenant le cache applicatif (auto-généré)
-    * phpunit.xml.dist : configuration de PHPUnit
-* bin : contenant les scripts CLI PHP de maintenance ou de cron
-    * vendors : script d'initialisation des librairies externes 
 * src : contenant les librairies spécifiques
-    * app.php : application principale
-    * autoload.php : autoload des classes
-* tests : contenant les tests unitaires et fonctionnels
-    * AppTest.php : exemple de tests fonctionnels de l'application principale
-    * bootstrap.php : initialisation des tests (autoload...)
 * vendor : contenant les librairies externes
-    * silex.phar : librairie du micro-framework Silex (https://github.com/fabpot/Silex)
-    * digex.phar : librairie de l'outil Digex (https://pitpit@github.com/digitas/Digex.git)
 * web : répertoire publique (DocumentRoot du serveur web)
 * deps : fichier de gestion des dépendances externes

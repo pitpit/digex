@@ -5,10 +5,6 @@
  * @version $Id$
  */
 
-// This will let the permissions be 0777
-// needed to get the permission to erase cache file
-umask(0000); 
-
 require_once __DIR__ . '/../src/autoload.php';
 
 $app = new Silex\Application();

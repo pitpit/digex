@@ -1,11 +1,12 @@
 app:
   debug: false
   providers:
-    twig: true
     url_generator: true
     session: true
     monolog: false
-    doctrine-dbal: true
+    twig: false
+    doctrine-dbal: false
+    doctrine-orm: false
 
 db:
   dbname:   mydb
