@@ -5,6 +5,9 @@
  * @version $Id$
  */
 
+// This will let the permissions be 0777
+//umask(0000); 
+
 require_once __DIR__ . '/../src/autoload.php';
 
 $app = new Silex\Application();

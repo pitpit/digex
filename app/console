@@ -1,25 +1,25 @@
 #!/usr/bin/env php
 <?php
 
-/**
- * @author Damien Pitard <dpitard at digitas.fr>
- * @version $Id$
- */
+// This will let the permissions be 0777
+//umask(0000);
+
+set_time_limit(0);
 
 require_once __DIR__.'/../src/autoload.php';
 
 use Symfony\Component\Console\Input\ArgvInput;
-use Silex\Application;
-use Digex\Console\Console;
+use Digex\Console;
 use Digex\Provider\ConsoleServiceProvider;
 
 $input = new ArgvInput();
 
-if ($input->hasParameterOption(array('--no-debug', ''))
+$app = new Silex\Application();
+$app->register(new ConsoleServiceProvider());
 
-$app = new Application();
+$app['app_dir'] = __DIR__.'/../app';
+$app['vendor_dir'] = __DIR__.'/../vendor/silex/vendor';
 $app['debug'] = !$input->hasParameterOption(array('--no-debug', ''));
 $app['env'] = $input->getParameterOption(array('--env', '-e'), getenv('SYMFONY_ENV') ?: 'dev');
 
-$app->register(new ConsoleServiceProvider());
 $app['console']->run();
