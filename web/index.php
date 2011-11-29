@@ -1,18 +1,17 @@
 <?php
 
 /**
- * @author Damien Pitard <dpitard at digitas.fr>
- * @version $Id$
+ * @author Damien Pitard <dpitard at digitas dot fr>
+ * @copyright Digitas France
  */
 
 // This will let the permissions be 0777
 //umask(0000); 
 
-require_once __DIR__ . '/../src/autoload.php';
+require_once __DIR__ . '/../app/autoload.php';
+require_once __DIR__ . '/../app/Application.php';
 
-$app = new Silex\Application();
-$app['app_dir'] = __DIR__.'/../app';
-$app['vendor_dir'] = __DIR__.'/../vendor/silex/vendor';
+$app = new Application();
 
 $mainControllerProvider = new Digitas\MainControllerProvider();
 $app->register($mainControllerProvider);

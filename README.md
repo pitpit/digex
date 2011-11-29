@@ -20,7 +20,9 @@ Changelog
 
 Todo
 ----
-...
+* Digex compiler
+* Move vendor installer in Console
+
 
 Requirements
 ------------
@@ -71,11 +73,11 @@ Pour initialiser un nouveau projet à partir de cette sandbox, télécharger l'a
 
     https://github.com/digitas/silex-sandbox/zipball/master
 
-### Installation des outils requis
+### Installation de la distribution LAMP
 
-Sous debian :
+Debian :
 
-apt-get install phpunit php5-apc git
+    apt-get install phpunit php5-apc git
 
 ### Configuration de PHP
 
@@ -119,6 +121,10 @@ environnement donnée dans les fichiers :
 * config_test.yml
 
 Pour lancer l'instance dans l'environnement de dev, charger l'URL http://.../index_dev.php
+
+### Initialisation de l'instance
+
+    php app/console digex:vendor
 
 ### Arborescence type
 

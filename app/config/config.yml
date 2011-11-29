@@ -1,10 +1,12 @@
 app:
   debug: false
   providers:
+    #after change of the following values, to sync the vendor dir run:
+    #  > php app/console digex:vendor 
     url_generator: true
     session: true
+    twig: true
     monolog: false
-    twig: false
     doctrine-dbal: false
     doctrine-orm: false
 
