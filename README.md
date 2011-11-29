@@ -12,74 +12,12 @@ Authors
 
 * Damien Pitard <dpitard at digitas dot fr>
 
-Changelog
----------
-
-* no more phar
-* updated to last Silex version
-
-Todo
-----
-* Digex compiler
-* Move vendor installer in Console
-
-
-Requirements
-------------
-
-* apache >= 2.2.x
-* myqsl >= 5.1.x
-* PHP >= 5.3.x
-
-Apache modules :
-
-* mod_rewrite
-* mod_expires
-* mod_headers (optionnel)
-* mod_setenvif (optionnel)
-* mod_deflate (optionnel)
-* mod_filter (optionnel)
-
-PHP Extensions :
-
-* php-xml (libxml >= 2.7.x)
-* apc
-* Tokenizer
-* Mbstring
-* iconv (iconv >= 2.11.x)
-* XML
-* php_posix
-* intl
-* json
-* pdo
-* pdo_mysql
-* xsl
-* pcre
-* cURL
-
-Pour valider la configuration serveur, un fichier de check est accessible en ligne
-sur l'instance à l'adresse <http://.../check.php>. Ce script est protégé sur les
-IPs interne (192.168.*) et locales (127.0.0.1, 10.0.2.2), donc il peut être livré
-sans problème en production.
-
 Getting started
 ---------------
 
-### Initialisation du repository
-
-Si votre projet 
-
-Pour initialiser un nouveau projet à partir de cette sandbox, télécharger l'archive :
-
-    https://github.com/digitas/silex-sandbox/zipball/master
-
-### Installation de la distribution LAMP
-
-Debian :
-
-    apt-get install phpunit php5-apc git
-
 ### Configuration de PHP
+
+Voici les valeurs de configuration recommandée :
 
     safe_mode = Off
     register_globals = Off
@@ -107,41 +45,75 @@ Installer le vhost suivant
         </Directory>
     </VirtualHost>
 
-### Configuration de Silex Sandbox
-
-le paramètrage de l'application se faire par l'intermédiaire des fichiers de
-configuration se trouvant dans : **app/config**
-
-La configuration par défaut se trouve dans **app/config/config.yml**.
-
-Cependant, il est possible d'effectuer des surcharges de configuration pour un
-environnement donnée dans les fichiers :
-
-* config_dev.yml
-* config_test.yml
-
-Pour lancer l'instance dans l'environnement de dev, charger l'URL http://.../index_dev.php
-
 ### Initialisation de l'instance
+
+Pour initialiser un nouveau projet à partir de la sandbox,
+[télécharger l'archive](https://github.com/digitas/silex-sandbox/zipball/master)
+
+Puis lancer la commande suivante :
 
     php app/console digex:vendor
 
-### Arborescence type
+### Test de l'instance
 
-* app : les fichiers propres à l'application
-    * Resources
-        * views : contenant les templates (au format twig)
-            * homepage.html.twig : template de home par défaut
-            * base.html.twig : layout par défaut
-    * config : contenant les fichiers de configuration
-        * config.ini : fichier principal de configuration au format php.ini
-    * data : données de l'application
-        * schema.sql : structure de la base de données
-        * fixtures.sql : données d'initialisation de l'application
-        * x.x.x-TO-x.x.x.sql : script de migration de version d'application
-    * logs : contenant les logs applicatifs  (auto-généré)
-    * cache : contenant le cache applicatif (auto-généré)
-* src : contenant les librairies spécifiques
-* vendor : contenant les librairies externes
-* web : répertoire publique (DocumentRoot du serveur web)
-* deps : fichier de gestion des dépendances externes
+Visiter le script de test sur **http://.../check.php** pour vérifier la configuration
+du serveur.
+
+Visiter l'environnement de dev sur **http://.../index_dev.php**.
+
+### Configuration de l'instance
+
+Le paramètrage de l'application se fait en Yaml dans le répertorie : **app/config**
+
+La configuration par défaut se trouve dans **app/config/config.yml**.
+
+Les surcharges de configuration en fonction de l'environnement se trouve dans **app/config/config_<DEV>.yml**.
+
+Requirements
+------------
+
+Softwares:
+
+* apache >= 2.2.x
+* myqsl >= 5.1.x
+* PHP >= 5.3.x
+
+Apache mods:
+
+* mod_rewrite
+* mod_expires
+* mod_headers (optionnel)
+* mod_setenvif (optionnel)
+* mod_deflate (optionnel)
+* mod_filter (optionnel)
+
+PHP mods:
+
+* php-xml (libxml >= 2.7.x)
+* apc
+* Tokenizer
+* Mbstring
+* iconv (iconv >= 2.11.x)
+* XML
+* php_posix
+* intl
+* json
+* pdo
+* pdo_mysql
+* xsl
+* pcre
+* cURL
+
+Tree
+----
+
+* *app* : les fichiers propres à l'application
+    * *Resources*
+        * *views* : contenant les templates (au format twig)
+    * *config* : contenant les fichiers de configuration
+    * *data* : données de l'application
+    * *logs* : contenant les logs applicatifs  (auto-généré)
+    * *cache* : contenant le cache applicatif (auto-généré)
+* *src* : contenant les librairies spécifiques
+* *vendor* : contenant les librairies externes
+* *web* : DocumentRoot
