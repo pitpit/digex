@@ -1,5 +1,0 @@
-[silex]
-    git=https://github.com/fabpot/Silex.git
-
-[digex]
-    git=https://github.com/digitas/digex.git
