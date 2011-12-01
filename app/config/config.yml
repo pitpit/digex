@@ -15,3 +15,5 @@ db:
   host:     localhost
   user:     root
   password: root
+  entities: [src/Digitas/Demo/Entity]
+      

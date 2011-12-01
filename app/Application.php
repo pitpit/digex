@@ -7,12 +7,29 @@ use Digex\Application as DigexApplication;
  * @copyright Digitas France
  */
 class Application extends DigexApplication
-{
-    public function __construct()
+{    
+    public function configure()
     {
         $this['app_dir'] = __DIR__;
         $this['vendor_dir'] = __DIR__.'/../vendor';
-        
-        parent::__construct();
+    }
+    
+    public function getControllers()
+    {
+        return array(
+            //register you controllers here
+            //...
+            '/' => new \Digitas\Demo\Controller\DefaultControllerProvider(),
+        );
+    }
+    
+    public function getServices()
+    {
+        return array(
+            new \Digex\Provider\LazyRegisterServiceProvider(),
+            
+            //register you providers here
+            //...
+        );
     }
 }

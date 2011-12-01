@@ -21,8 +21,8 @@ use Digex\Provider\LazyRegisterServiceProvider;
 $input = new ArgvInput();
 
 $app = new Application();
+$app->register(new ConsoleServiceProvider()); //need to be registered before LazyRegisterServiceProvider
 $app->register(new LazyRegisterServiceProvider());
-$app->register(new ConsoleServiceProvider());
 
 $app['debug'] = !$input->hasParameterOption(array('--no-debug', ''));
 $app['env'] = $input->getParameterOption(array('--env', '-e'), getenv('SYMFONY_ENV') ?: 'dev');

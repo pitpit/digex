@@ -5,7 +5,7 @@ silex-sandbox est une application Silex préconfigurée permettant d'initialiser
 rapidement un projet.
 
 Pour en savoir plus sur Silex, veuillez vous conformer à la documentation
-https://github.com/digitas/silex-sandbox/blob/master/doc/guidelines-silex.md
+https://github.com/digitas/silex-sandbox/blob/master/doc/guidelines-digex.md
 
 Authors
 -------
@@ -50,7 +50,7 @@ Installer le vhost suivant
 Pour initialiser un nouveau projet à partir de la sandbox,
 [télécharger l'archive](https://github.com/digitas/silex-sandbox/zipball/master)
 
-Puis lancer la commande suivante :
+Puis lancer la commande suivante pour rappatrier les librairies 3rd party:
 
     php app/console digex:vendor
 
