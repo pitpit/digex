@@ -1,10 +1,9 @@
 silex-sandbox
 =============
 
-*silex-sandbox* est une application basé sur le micro-framework *Silex* préconfigurée permettant d'initialiser
-rapidement un projet.
+A Silex sandbox by Digitas France
 
-Pour en savoir plus : https://github.com/digitas/silex-sandbox/wiki
+For further information: https://github.com/digitas/silex-sandbox/wiki
 
 Authors
 -------
