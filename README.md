@@ -5,7 +5,8 @@ A Silex sandbox by Digitas France
 
 For further information, [read the wiki](https://github.com/digitas/silex-sandbox/wiki).
 
-# Get the sources
+Get the sources
+---------------
 
 * [Download Silex-Sandbox package](https://github.com/digitas/silex-sandbox/tags)
 
