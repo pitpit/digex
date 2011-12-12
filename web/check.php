@@ -29,12 +29,12 @@ EOF;
 }
 
 if (!is_writable(__DIR__ . '/../app/cache')) {
-    $majorProblems[] = 'Change the permissions of the "<strong>cache/</strong>"
+    $majorProblems[] = 'Change the permissions of the "<strong>app/cache/</strong>"
         directory so that the web server can write into it.';
 }
 
 if (!is_writable(__DIR__ . '/../app/logs')) {
-    $majorProblems[] = 'Change the permissions of the "<strong>log/</strong>"
+    $majorProblems[] = 'Change the permissions of the "<strong>app/log/</strong>"
         directory so that the web server can write into it.';
 }
 
