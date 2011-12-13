@@ -11,5 +11,5 @@
 require_once __DIR__ . '/../app/autoload.php';
 require_once __DIR__ . '/../app/Application.php';
 
-$app = new Application('dev', true);
+$app = new Application(new Silex\Application(), 'dev', true);
 $app->run();

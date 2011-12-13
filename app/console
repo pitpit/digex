@@ -17,14 +17,17 @@ use Symfony\Component\Console\Input\ArgvInput;
 use Digex\AppAwareCommand;
 use Digex\Provider\ConsoleServiceProvider;
 use Digex\Provider\LazyRegisterServiceProvider;
+use Silex\Application as SilexApplication;
 
 $input = new ArgvInput();
 
-$app = new Application();
-$app->register(new ConsoleServiceProvider()); //need to be registered before LazyRegisterServiceProvider
-$app->register(new LazyRegisterServiceProvider());
+$debug = !$input->hasParameterOption(array('--no-debug', ''));
+$env = $input->getParameterOption(array('--env', '-e'), getenv('SYMFONY_ENV') ?: 'dev');
 
-$app['debug'] = !$input->hasParameterOption(array('--no-debug', ''));
-$app['env'] = $input->getParameterOption(array('--env', '-e'), getenv('SYMFONY_ENV') ?: 'dev');
+//register the console before everything
+$silexApp = new SilexApplication();
+$silexApp->register(new ConsoleServiceProvider());
 
-$app['console']->run();
+$app = new Application($silexApp, $env, $debug);
+
+$silexApp['console']->run();
