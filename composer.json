@@ -7,12 +7,32 @@
         {"name": "Damien Pitard", "email": "dpitard@digitas.fr"},
         {"name": "Pierre-Louis Launay", "email": "pllaunay@digitas.com"}
     ],
+    "repositories": {
+        "digitas": {
+            "package": {
+                "name": "digitas/digex-core",
+                "version": "1.0.0-dev",
+                "source": {
+                    "url": "git@github.com:digitas/digex-core.git",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
+        }
+    },
     "require": {
         "php": ">=5.3.0",
+        "symfony/class-loader": ">=2.0",
         "silex/silex": "1.0.*",
-        "digitas/digex-core": "master-dev"
+        "digitas/digex-core": "1.0.0-dev"
+    },
+    "recommend": {
+        "doctrine/common": "2.1.4",
+        "doctrine/dbal": "2.1.5",
+        "doctrine/orm": "2.1.4",
+        "twig/twig": "1.4.*"
     },
     "autoload": {
-        "psr-0": { "Digitas": "src/" }
+        "psr-0": { "Digitas": "src/", "Digex": "vendor/digitas/digex-core/src" }
     }
 }
