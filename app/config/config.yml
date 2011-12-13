@@ -1,5 +1,4 @@
 app:
-  debug: false
   providers:
     #after change of the following values, to sync the vendor dir run:
     #  > php app/console digex:vendor 

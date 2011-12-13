@@ -1,35 +1,22 @@
 <?php
 
 use Digex\Application as DigexApplication;
+use Silex\Application as SilexApplication;
+use Silex\ControllerProviderInterface;
 
 /**
  * @author Damien Pitard <dpitard at digitas.fr>
  * @copyright Digitas France
  */
 class Application extends DigexApplication
-{    
-    public function configure()
+{
+    public function configure(SilexApplication $app)
     {
-        $this['app_dir'] = __DIR__;
-        $this['vendor_dir'] = __DIR__.'/../vendor';
-    }
-    
-    public function getControllers()
-    {
-        return array(
-            //register you controllers here
-            //...
-            '/' => new \Digitas\Demo\Controller\DefaultControllerProvider(),
-        );
-    }
-    
-    public function getServices()
-    {
-        return array(
-            new \Digex\Provider\LazyRegisterServiceProvider(),
-            
-            //register you providers here
-            //...
-        );
+        $app['app_dir'] = __DIR__;
+        $app['vendor_dir'] = __DIR__.'/../vendor';
+        
+        $app->register(new \Digex\Provider\LazyRegisterServiceProvider());
+        
+        $app->mount('/', new \Digitas\Demo\Controller\DefaultControllerProvider());
     }
 }

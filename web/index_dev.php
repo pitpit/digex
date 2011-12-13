@@ -11,7 +11,5 @@
 require_once __DIR__ . '/../app/autoload.php';
 require_once __DIR__ . '/../app/Application.php';
 
-$app = new Application();
-$app['debug'] = 'true';
-$app['env'] = 'dev';
+$app = new Application('dev', true);
 $app->run();
