@@ -44,3 +44,7 @@ build/config/buildinfo.properties
 app/cache/*
 app/logs/*
 vendor/
+
+# packagist
+composer.phar
+composer.lock

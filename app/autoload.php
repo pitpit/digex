@@ -5,11 +5,9 @@
  * @copyright Digitas France
  */
 
-//require_once __DIR__.'/../vendor/silex/autoload.php';
-require_once 'phar://'.__DIR__.'/../vendor/silex.phar/autoload.php';
-//require_once __DIR__.'/../vendor/digex/autoload.php';
-require_once 'phar://'.__DIR__.'/../vendor/digex.phar/autoload.php';
+require __DIR__.'/../vendor/.composer/autoload.php';
 
-$loader = new Symfony\Component\ClassLoader\UniversalClassLoader();
-$loader->registerNamespace('Digitas', __DIR__.'/../src');
-$loader->register();
+//Uncomment the following lines to developp on Digex-Core
+//$loader = new \Symfony\Component\ClassLoader\UniversalClassLoader();
+//$loader->registerNamespace('Digex', __DIR__.'/../vendor/digex/src');
+//$loader->register();
