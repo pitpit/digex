@@ -1,16 +1,16 @@
-Silex-Sandbox
-=============
+Digex
+=====
 
-A Silex sandbox by Digitas France
+A sandbox for Silex, by Digitas France
 
-For further information, [read the wiki](https://github.com/digitas/silex-sandbox/wiki).
+For further information, [read the wiki](https://github.com/digitas/digex/wiki).
 
-If you have identified a bug in *Silex-Sandbox* or in *Digex*, please use the [the bug tracker](https://github.com/digitas/silex-sandbox/issues).
+If you have identified a bug in *Digex*, please use the [the bug tracker](https://github.com/digitas/digex/issues).
 
 Get the sources
 ---------------
 
-* [Download Silex-Sandbox package](https://github.com/digitas/silex-sandbox/tags)
+* [Download Digex](https://github.com/digitas/digex/tags)
 
 Authors
 -------
