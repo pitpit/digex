@@ -1,16 +1,13 @@
 app:
   providers:
-    #after change of the following values, to sync the vendor dir run:
-    #  > php app/console digex:vendor 
     url_generator: true
     session: true
     twig: true
     monolog: false
-    doctrine-dbal: false
-    doctrine-orm: false
+    doctrine: true
 
 db:
-  dbname:   mydb
+  dbname:   digex
   host:     localhost
   user:     root
   password: root
