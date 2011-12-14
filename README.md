@@ -1,7 +1,7 @@
 Digex
 =====
 
-A sandbox for Silex, by Digitas France
+A Silex sandbox by Digitas France
 
 For further information, [read the wiki](https://github.com/digitas/digex/wiki).
 
