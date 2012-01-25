@@ -23,7 +23,6 @@
     "autoload": {
         "psr-0": {
             "Digitas": "src/",
-            "Digex": "vendor/digitas/digex-core/src"
         }
     }
 }
