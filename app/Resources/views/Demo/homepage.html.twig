@@ -1,0 +1,13 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}{{ "Yeah"|trans }}{% endblock %}
+
+{% block content %}
+<h1>{{ "It works !"|trans }}</h1>
+
+<p>{{ "Choose your country:"|trans }}</p>
+<ul>
+	<li><a href="{{ path('homepage', {'locale': 'fr_FR'})}}">France</a></li>
+	<li><a href="{{ path('homepage', {'locale': 'en_US'})}}">USA</a></li>
+</ul>
+{% endblock %}

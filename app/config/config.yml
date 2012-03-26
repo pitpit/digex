@@ -9,7 +9,7 @@ app:
     #  add "path" and "url" helpers for twig (if url_generator is enabled)
     #  add "trans" and "transchoice" helpers (if translation is enabled)
     #  add form helpers (if form is enabled)
-    #symfony_bridges: false 
+    symfony_bridges: true 
     monolog: false 
 
 translation:
