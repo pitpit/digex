@@ -2,9 +2,20 @@ app:
   providers:
     url_generator: true
     session: true
-    twig: true
-    monolog: false
-    doctrine: true
+    twig: true     
+    doctrine: true          #enable Doctrine ORM and Doctrine DBAL
+    translation: true   
+    #symfony_bridges:
+    #  add "path" and "url" helpers for twig (if url_generator is enabled)
+    #  add "trans" and "transchoice" helpers (if translation is enabled)
+    #  add form helpers (if form is enabled)
+    #symfony_bridges: false 
+    monolog: false 
+
+translation:
+  locale_fallback: en_EN
+  locales:
+    fr_FR: fr_FR.yml
 
 db:
   dbname:   digex

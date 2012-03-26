@@ -8,6 +8,9 @@
 // This will let the permissions be 0777
 //umask(0000); 
 
+ini_set('display_errors', 1); 
+error_reporting(E_ALL);
+
 require_once __DIR__ . '/../app/autoload.php';
 require_once __DIR__ . '/../app/Application.php';
 
