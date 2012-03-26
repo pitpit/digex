@@ -47,4 +47,3 @@ vendor/
 
 # packagist
 composer.phar
-composer.lock
