@@ -5,6 +5,9 @@
  * @copyright Digitas France
  */
 
+ini_set('display_errors', 1); 
+error_reporting(E_ALL);
+
 // This will let the permissions be 0777
 //umask(0000); 
 
