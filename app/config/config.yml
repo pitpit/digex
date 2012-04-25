@@ -23,4 +23,6 @@ db:
   user:     root
   password: root
   entities: [src/Digitas/Demo/Entity]
-      
+
+session:
+  cookie_lifetime: 3600      

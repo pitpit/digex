@@ -13,8 +13,7 @@
         "digitas/digex-core": "dev-master"
     },
     "recommend": {
-        "swiftmailer/swiftmailer": "dev-master",
-        "monolog/monolog": "1.0.2"
+        "swiftmailer/swiftmailer": "dev-master"
     },
     "autoload": {
         "psr-0": {
