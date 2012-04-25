@@ -1,13 +1,33 @@
 {% extends 'layout.html.twig' %}
-
-{% block title %}{{ "Yeah"|trans }}{% endblock %}
+{% block title %}{{ "It works!"|trans }}{% endblock %}
 
 {% block content %}
-<h1>{{ "It works !"|trans }}</h1>
+<div class="hero-unit">
+  <h1>Digex<small> Digitas</small></h1>
+  <p>A sandbox for Silex</p>
+</div>
 
-<p>{{ "Choose your country:"|trans }}</p>
-<ul>
-	<li><a href="{{ path('homepage', {'locale': 'fr_FR'})}}">France</a></li>
-	<li><a href="{{ path('homepage', {'locale': 'en_US'})}}">USA</a></li>
-</ul>
+<!-- Example row of columns -->
+<div class="row">
+<div class="span4">
+  <h2>{{ "Language switcher"|trans }}</h2>
+  <p>{{ "Static translation is natively supported by Digex. Please try the language switcher below:"|trans }}</p>
+  <ul>
+    <li><a href="{{ path('homepage', {'locale': 'fr_FR'})}}">Français</a></li>
+    <li><a href="{{ path('homepage', {'locale': 'en_US'})}}">English</a></li>
+  </ul>
+</div>
+<div class="span4">
+  <h2>Heading</h2>
+   <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+</div>
+<div class="span4">
+  <h2>Heading</h2>
+  <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+</div>
+</div>
+
+
+
+
 {% endblock %}
