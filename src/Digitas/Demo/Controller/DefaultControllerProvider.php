@@ -3,7 +3,6 @@
 namespace Digitas\Demo\Controller;
 
 use Silex\Application;
-use Silex\ControllerCollection;
 use Silex\ControllerProviderInterface;
 
 
@@ -12,10 +11,10 @@ use Silex\ControllerProviderInterface;
  * @copyright Digitas France
  */
 class DefaultControllerProvider implements ControllerProviderInterface
-{    
+{
     public function connect(Application $app)
     {
-        $controllers = new ControllerCollection();
+        $controllers = $app['controllers_factory'];
 
         //dispatch
         $controllers->get('/', function() use ($app) {
@@ -25,7 +24,7 @@ class DefaultControllerProvider implements ControllerProviderInterface
 
         //homepage
         $controllers->get('/{locale}', function($locale) use ($app) {
-            
+
             return $app['twig']->render('Demo/homepage.html.twig');
         })->bind('homepage');
 
