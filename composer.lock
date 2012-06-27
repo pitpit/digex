@@ -4,7 +4,7 @@
         {
             "package": "digitas/digex-core",
             "version": "dev-master",
-            "source-reference": "77c84a04af5af09d32734672931fb60408812444"
+            "source-reference": "d78b3d9de93dbb0fe4ff6ad85030644f34802fa1"
         },
         {
             "package": "doctrine/common",
@@ -27,7 +27,7 @@
         {
             "package": "silex/silex",
             "version": "dev-master",
-            "source-reference": "25abd1a8e9042143716232b8c7f6e545545c830b",
+            "source-reference": "f9837f853f4d9d72e5186a378597d15b00635993",
             "alias": "1.0.9999999.9999999-dev"
         },
         {
@@ -117,7 +117,7 @@
         },
         {
             "package": "twig/twig",
-            "version": "1.4.0"
+            "version": "1.8.0"
         }
     ],
     "packages-dev": null,
