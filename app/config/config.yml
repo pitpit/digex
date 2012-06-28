@@ -2,18 +2,18 @@ app:
   providers:
     url_generator: true
     session: true
-    twig: true     
+    twig: true
     doctrine: true          #enable Doctrine ORM and Doctrine DBAL
-    translation: true   
+    translation: true
     #symfony_bridges:
     #  add "path" and "url" helpers for twig (if url_generator is enabled)
     #  add "trans" and "transchoice" helpers (if translation is enabled)
     #  add form helpers (if form is enabled)
-    symfony_bridges: true 
-    monolog: false 
+    symfony_bridges: true
+    monolog: false
 
 translation:
-  locale_fallback: en_EN
+  locale_fallback: fr_FR
   locales:
     fr_FR: fr_FR.yml
 
@@ -25,4 +25,4 @@ db:
   entities: [src/Digitas/Demo/Entity]
 
 session:
-  cookie_lifetime: 3600      
+  cookie_lifetime: 3600
