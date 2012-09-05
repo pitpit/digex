@@ -1,6 +1,7 @@
 {
     "name": "digitas/digex",
     "type": "application",
+    "minimum-stability": "dev",
     "description": "A sandbox for Silex, by Digitas France",
     "license": "BSD-3",
     "authors": [
