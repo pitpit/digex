@@ -1,0 +1,24 @@
+{% extends 'layout.html.twig' %}
+{% block title %}{{ "It works!"|trans }}{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="span12">
+      <h2>{{ user.firstname }} {{ user.lastname }}</h2>
+      <table class="table table-hover table-bordered">
+        <tbody>
+            <tr>
+                <th>id</th>
+                <td>{{ user.id }}</td>
+            </tr>
+            <tr>
+                <th>email</th>
+                <td>{{ user.email }}</td>
+            </tr>
+        </tbody>
+      </table>
+      <p></p>
+      <p></p>
+    </div>
+</div>
+{% endblock %}

@@ -2,8 +2,6 @@
 
 namespace Digitas\Demo\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-
 /**
  * @author Damien Pitard <dpitard at digitas dot fr>
  * @copyright Digitas France
@@ -23,9 +21,24 @@ class User
     protected $id;
     
     /**
-     * @Column(type="text", length=255, nullable=true)
+     * @Column(type="text", length=255)
      */
     protected $email;
+
+    /**
+     * @Column(type="text", length=80)
+     */
+    protected $firstname;
+
+    /**
+     * @Column(type="text", length=80)
+     */
+    protected $lastname;
+
+    public function getId()
+    {
+        return $this->id;
+    }
 
     public function setEmail($email)
     {
@@ -35,5 +48,25 @@ class User
     public function getEmail()
     {
         return $this->email;
+    }
+
+    public function setFirstname($firstname)
+    {
+        $this->firstname = $firstname;
+    }
+
+    public function getFirstname()
+    {
+        return $this->firstname;
+    }
+
+    public function setLastname($lastname)
+    {
+        $this->lastname = $lastname;
+    }
+
+    public function getLastname()
+    {
+        return $this->lastname;
     }
 }
