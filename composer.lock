@@ -1,11 +1,11 @@
 {
-    "hash": "88ed2ca96ae5addee21d62849e4503fb",
+    "hash": "3c5032fd19deeccc9c19098cb109c8e0",
     "packages": [
         {
             "package": "digitas/digex-core",
             "version": "dev-master",
-            "source-reference": "74846fd715aaf05b6f01ac28d2cbb5f98a6d015d",
-            "commit-date": "1347010899"
+            "source-reference": "1.1.0-RC1",
+            "commit-date": "1347014698"
         },
         {
             "package": "doctrine/common",
@@ -13,31 +13,21 @@
         },
         {
             "package": "doctrine/data-fixtures",
-            "version": "v1.0.0-ALPHA2"
+            "version": "dev-master",
+            "source-reference": "779c3dfe446b6da893be87b908d6be28345d1e01",
+            "commit-date": "1341780535"
         },
         {
             "package": "doctrine/dbal",
-            "version": "2.2.x-dev",
-            "source-reference": "da4b7b4d965db0c1c1d23333e87ee5ae8994e249",
-            "commit-date": "1344978731"
+            "version": "2.2.2"
         },
         {
             "package": "doctrine/orm",
-            "version": "2.2.x-dev",
-            "source-reference": "11faa7e49d77e559e4e376d3b927d2e742fbcf8b",
-            "commit-date": "1346246267"
+            "version": "2.2.3"
         },
         {
             "package": "pimple/pimple",
-            "version": "dev-master",
-            "alias-pretty-version": "1.0.x-dev",
-            "alias-version": "1.0.9999999.9999999-dev"
-        },
-        {
-            "package": "pimple/pimple",
-            "version": "dev-master",
-            "source-reference": "db836b8cfadc0f39dacafa2bf311a1ab603600bb",
-            "commit-date": "1343051648"
+            "version": "1.0.0"
         },
         {
             "package": "silex/silex",
@@ -53,9 +43,7 @@
         },
         {
             "package": "symfony/config",
-            "version": "2.0.x-dev",
-            "source-reference": "v2.0.17",
-            "commit-date": "1344264656"
+            "version": "v2.0.17"
         },
         {
             "package": "symfony/console",
@@ -71,9 +59,7 @@
         },
         {
             "package": "symfony/http-kernel",
-            "version": "2.1.x-dev",
-            "source-reference": "ec5cdb100c20537e9d806facd4d121c985658e8b",
-            "commit-date": "1346926323"
+            "version": "v2.1.0"
         },
         {
             "package": "symfony/routing",
@@ -93,23 +79,17 @@
         },
         {
             "package": "twig/twig",
-            "version": "dev-master",
-            "alias-pretty-version": "1.9.x-dev",
-            "alias-version": "1.9.9999999.9999999-dev"
-        },
-        {
-            "package": "twig/twig",
-            "version": "dev-master",
-            "source-reference": "459720ff3b74ee0c0d159277c6f2f5df89d8a4f6",
-            "commit-date": "1346397138"
+            "version": "v1.9.2"
         }
     ],
     "packages-dev": null,
     "aliases": [
 
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "stability-flags": {
-        "digitas/digex-core": 20
+        "silex/silex": 20,
+        "digitas/digex-core": 20,
+        "doctrine/data-fixtures": 20
     }
 }

@@ -1,7 +1,6 @@
 {
     "name": "digitas/digex",
     "type": "application",
-    "minimum-stability": "dev",
     "description": "A sandbox for Silex, by Digitas France",
     "license": "BSD-3",
     "authors": [
@@ -10,13 +9,13 @@
     ],
     "require": {
         "php": ">=5.3.0",
-        "silex/silex": "1.0.*",
+        "silex/silex": "dev-master",
         "digitas/digex-core": "dev-master",
         "doctrine/dbal": "2.2.*",
         "doctrine/orm": "2.2.*",
-        "doctrine/data-fixtures": "1.0.*",
+        "doctrine/data-fixtures": "dev-master",
         "symfony/translation": "2.1.*",
-        "symfony/twig-bridge" : "2.1.*",
+        "symfony/twig-bridge": "2.1.*",
         "twig/twig": "1.9.*",
         "symfony/config": "2.0.*"
     },
