@@ -5,7 +5,6 @@ namespace Digitas\Demo\Controller;
 use Silex\Application;
 use Silex\ControllerProviderInterface;
 
-
 /**
  * @author Damien Pitard <dpitard at digitas dot fr>
  * @copyright Digitas France
@@ -23,12 +22,10 @@ class DefaultControllerProvider implements ControllerProviderInterface
         });
 
         //homepage
-        $controllers->get('/{locale}', function($locale) use ($app) {
+        $controllers->get('/{_locale}', function($_locale) use ($app) {
 
             return $app['twig']->render('Demo/homepage.html.twig');
         })->bind('homepage');
-
-
 
         return $controllers;
     }

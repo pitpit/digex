@@ -1,28 +1,20 @@
-app:
-  providers:
-    url_generator: true
-    session: true
-    twig: true
-    doctrine: true          #enable Doctrine ORM and Doctrine DBAL
-    translation: true
-    #symfony_bridges:
-    #  add "path" and "url" helpers for twig (if url_generator is enabled)
-    #  add "trans" and "transchoice" helpers (if translation is enabled)
-    #  add form helpers (if form is enabled)
-    symfony_bridges: true
-    monolog: false
-
 translation:
   locale_fallback: fr_FR
   locales:
     fr_FR: fr_FR.yml
 
 db:
-  dbname:   digex
+  driver:   pdo_mysql
+  name:   digex
   host:     localhost
   user:     root
   password: root
-  entities: [src/Digitas/Demo/Entity]
 
-session:
-  cookie_lifetime: 3600
+em:
+  entities: [src/Digitas/Demo/Entity]
+  fixtures:  [src/Digitas/Demo/DataFixtures/ORM]
+
+translator:
+  locale_fallback: en_UK
+  locales:
+    fr_FR: fr_FR.yml

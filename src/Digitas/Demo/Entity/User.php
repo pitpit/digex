@@ -26,4 +26,14 @@ class User
      * @Column(type="text", length=255, nullable=true)
      */
     protected $email;
+
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    }
+
+    public function getEmail()
+    {
+        return $this->email;
+    }
 }

@@ -11,9 +11,18 @@
     "require": {
         "php": ">=5.3.0",
         "silex/silex": "1.0.*",
-        "digitas/digex-core": "dev-master"
+        "digitas/digex-core": "dev-master",
+        "doctrine/dbal": "2.2.*",
+        "doctrine/orm": "2.2.*",
+        "doctrine/data-fixtures": "1.0.*",
+        "symfony/translation": "2.1.*",
+        "symfony/twig-bridge" : "2.1.*",
+        "twig/twig": "1.9.*",
+        "symfony/config": "2.0.*"
     },
     "recommend": {
+        "symfony/form": "2.1.*",
+        "monolog/monolog": "1.0.*",
         "swiftmailer/swiftmailer": "dev-master"
     },
     "autoload": {

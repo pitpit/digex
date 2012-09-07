@@ -1,15 +1,10 @@
 <?php
 
-/**
- * @author Damien Pitard <dpitard at digitas dot fr>
- * @copyright Digitas France
- */
+//umask(0000);  //This will let the permissions be 0777
 
-// This will let the permissions be 0777
-//umask(0000); 
+ini_set('display_errors', 1); 
+error_reporting(E_ALL);
 
-require_once __DIR__ . '/../vendor/autoload.php';
-require_once __DIR__ . '/../app/Application.php';
-
-$app = new Application(new Silex\Application(), 'prod', false);
+$app = require __DIR__.'/../app/app.php';
+$app['debug'] = false;
 $app->run();
