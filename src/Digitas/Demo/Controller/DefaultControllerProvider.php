@@ -4,7 +4,8 @@ namespace Digitas\Demo\Controller;
 
 use Silex\Application;
 use Silex\ControllerProviderInterface;
-use  Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Digitas\Demo\Entity\User;
 
 /**
  * @author Damien Pitard <dpitard at digitas dot fr>
@@ -28,29 +29,26 @@ class DefaultControllerProvider implements ControllerProviderInterface
             return $app['twig']->render('Demo/homepage.html.twig');
         })->bind('homepage');
 
-        //see all users
-        $controllers->get('/{_locale}/users', function($_locale) use ($app) {
-
-            $users = $app['em']->getRepository('Digitas\Demo\Entity\User')->findAll();
-
-            return $app['twig']->render('Demo/users.html.twig', array(
-                'users' => $users
-            ));
-        })->bind('users');
-
         //see a user
         $controllers->get('/{_locale}/user/{id}', function($_locale, $id) use ($app) {
 
-            $user = $app['em']->getRepository('Digitas\Demo\Entity\User')->findOneById($id);
+            $users = $app['em']->getRepository('Digitas\Demo\Entity\User')->findAll();
 
-            if (null === $user) {
-                throw new NotFoundHttpException(sprintf('Unable to find user with id %s', $id));
+            $current = null;
+            if (null !== $id) {
+                $current = $app['em']->getRepository('Digitas\Demo\Entity\User')->findOneById($id);
+
+                if (null === $current) {
+                    throw new NotFoundHttpException(sprintf('Unable to find user with id %s', $id));
+                }
             }
 
             return $app['twig']->render('Demo/user.html.twig', array(
-                'user' => $user
+                'users' => $users,
+                'current_user' => $current
             ));
-        })->bind('user');
+        })->bind('user')
+          ->value('id', null);
 
         return $controllers;
     }
