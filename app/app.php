@@ -56,6 +56,11 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 $app->register(new Silex\Provider\FormServiceProvider());
 
 /*
+//Validators support, see http://silex.sensiolabs.org/doc/providers/validator.html
+$app->register(new Silex\Provider\ValidatorServiceProvider());
+ */
+
+/*
 //Log support, see http://silex.sensiolabs.org/doc/providers/monolog.html
 $app->register(new Silex\Provider\MonologServiceProvider(), array(
     'monolog.logfile'       => __DIR__ . '/logs/app.log',
