@@ -6,6 +6,7 @@ use Silex\Application;
 use Silex\ControllerProviderInterface;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Digitas\Demo\Entity\User;
+use Digitas\Demo\Form\UserType;
 
 /**
  * @author Damien Pitard <dpitard at digitas dot fr>
@@ -29,6 +30,28 @@ class DefaultControllerProvider implements ControllerProviderInterface
             return $app['twig']->render('Demo/homepage.html.twig');
         })->bind('homepage');
 
+        //create a new user
+        $controllers->match('/{_locale}/user/_new', function($_locale) use ($app) {
+
+            $user = new User();
+            $form = $app['form.factory']->create(new UserType(), $user);
+
+            if ($app['request']->getMethod() === 'POST') {
+                $form->bindRequest($app['request']);
+
+                if ($form->isValid()) {
+                    $app['em']->persist($user);
+                    $app['em']->flush();
+
+                    return $app->redirect($app['url_generator']->generate('user'));
+                }
+            }
+
+            return $app['twig']->render('Demo/new.html.twig', array(
+                'form' => $form->createView()
+            ));
+        })->bind('new_user');
+
         //see a user
         $controllers->get('/{_locale}/user/{id}', function($_locale, $id) use ($app) {
 
@@ -49,6 +72,7 @@ class DefaultControllerProvider implements ControllerProviderInterface
             ));
         })->bind('user')
           ->value('id', null);
+
 
         return $controllers;
     }

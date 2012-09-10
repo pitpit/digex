@@ -52,10 +52,8 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'cache' => __DIR__ . '/cache/twig'
 ));
 
-/*
 //Form support, see http://silex.sensiolabs.org/doc/providers/form.html
 $app->register(new Silex\Provider\FormServiceProvider());
-*/
 
 /*
 //Log support, see http://silex.sensiolabs.org/doc/providers/monolog.html

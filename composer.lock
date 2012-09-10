@@ -1,5 +1,5 @@
 {
-    "hash": "3c5032fd19deeccc9c19098cb109c8e0",
+    "hash": "a05a878d4d5c0d29097b41c92471425e",
     "packages": [
         {
             "package": "digitas/digex-core",
@@ -50,7 +50,15 @@
             "version": "v2.1.0"
         },
         {
+            "package": "symfony/doctrine-bridge",
+            "version": "v2.1.0"
+        },
+        {
             "package": "symfony/event-dispatcher",
+            "version": "v2.1.0"
+        },
+        {
+            "package": "symfony/form",
             "version": "v2.1.0"
         },
         {
@@ -59,6 +67,14 @@
         },
         {
             "package": "symfony/http-kernel",
+            "version": "v2.1.0"
+        },
+        {
+            "package": "symfony/locale",
+            "version": "v2.1.0"
+        },
+        {
+            "package": "symfony/options-resolver",
             "version": "v2.1.0"
         },
         {
@@ -71,6 +87,10 @@
         },
         {
             "package": "symfony/twig-bridge",
+            "version": "v2.1.0"
+        },
+        {
+            "package": "symfony/validator",
             "version": "v2.1.0"
         },
         {
