@@ -1,8 +1,3 @@
-translation:
-  locale_fallback: fr_FR
-  locales:
-    fr_FR: fr_FR.yml
-
 db:
   driver:   pdo_mysql
   name:   digex
