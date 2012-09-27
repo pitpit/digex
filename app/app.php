@@ -48,7 +48,7 @@ $app['translator'] = $app->share($app->extend('translator', function($translator
 
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => __DIR__ . '/views',
-    'cache' => __DIR__ . '/cache/twig'
+    'twig.options' => array('cache' => __DIR__ . '/cache/twig')
 ));
 
 //Form support, see http://silex.sensiolabs.org/doc/providers/form.html
