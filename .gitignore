@@ -47,3 +47,6 @@ vendor/
 
 # packagist
 composer.phar
+
+# Vagrant
+vagrant/.vagrant
