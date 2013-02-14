@@ -2,6 +2,8 @@
 
 $app = new Silex\Application();
 
+$app['debug'] = (isset($env) && $env === 'dev');
+
 if (PHP_SAPI === 'cli') {
     $app->register(new Digex\Provider\ConsoleServiceProvider());
 }
