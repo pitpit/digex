@@ -8,5 +8,4 @@ require_once __DIR__.'/../vendor/autoload.php';
 
 $env = 'dev'; //pass the current environment to app.php
 $app = require __DIR__.'/../app/app.php';
-$app['debug'] = true;
 $app->run();
