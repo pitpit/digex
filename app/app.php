@@ -25,7 +25,7 @@ $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
 
 $app->register(new Digex\Provider\DoctrineORMServiceProvider(), array(
     'em.options' => array(
-        'proxy_dir'         => __DIR__ . '/cache/proxies',
+        'proxy_dir'         => __DIR__ . '/cache/' . (isset($env) ? $env : 'prod') . '/proxies',
         'proxy_namespace'   => 'DoctrineORMProxy',
         'entities'          => $app['config']['em']['entities']
     ),
@@ -51,7 +51,7 @@ $app['translator'] = $app->share($app->extend('translator', function($translator
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => __DIR__ . '/views',
     'twig.options' => array(
-        'cache' => __DIR__ . '/cache/twig',
+        'cache' => __DIR__ . '/cache/' . (isset($env) ? $env : 'prod') . '/twig',
         'debug' => $app['debug']
     )
 ));
@@ -67,7 +67,7 @@ $app->register(new Silex\Provider\ValidatorServiceProvider());
 /*
 //Log support, see http://silex.sensiolabs.org/doc/providers/monolog.html
 $app->register(new Silex\Provider\MonologServiceProvider(), array(
-    'monolog.logfile'       => __DIR__ . '/logs/app.log',
+    'monolog.logfile'       => __DIR__ . '/logs/' . (isset($env) ? $env : 'prod') . '.log',
     'monolog.name'          => 'app'
 ));
  */
