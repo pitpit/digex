@@ -1,6 +1,7 @@
 <?php
 
 $app = new Silex\Application();
+$app['debug'] = (isset($env) && $env === 'dev');
 
 if (PHP_SAPI === 'cli') {
     $app->register(new Digex\Provider\ConsoleServiceProvider());
@@ -11,80 +12,23 @@ $app->register(new Digex\Provider\ConfigurationServiceProvider(), array(
     'config.env'    => isset($env)?$env:null,
 ));
 
-$app->register(new Silex\Provider\DoctrineServiceProvider(), array(
-    'db.options' => array(
-        'driver'    => $app['config']['db']['driver'],
-        'dbname'    => $app['config']['db']['name'],
-        'host'      => $app['config']['db']['host'],
-        'user'      => $app['config']['db']['user'],
-        'password'  => $app['config']['db']['password'],
-    )
-));
-
-$app->register(new Digex\Provider\DoctrineORMServiceProvider(), array(
-    'em.options' => array(
-        'proxy_dir'         => __DIR__ . '/cache/proxies',
-        'proxy_namespace'   => 'DoctrineORMProxy',
-        'entities'          => $app['config']['em']['entities']
-    ),
-    'em.fixtures'              => $app['config']['em']['fixtures'],
-));
-
-$app->register(new Silex\Provider\UrlGeneratorServiceProvider());
-
-$app->register(new Silex\Provider\TranslationServiceProvider(), array(
-    'locale_fallback' => $app['config']['translator']['locale_fallback']
-));
-
-$app['translator'] = $app->share($app->extend('translator', function($translator, $app) use ($app) {
-    $translator->addLoader('yaml', new Symfony\Component\Translation\Loader\YamlFileLoader());
-
-    foreach($app['config']['translator']['locales'] as $locale => $filename) {
-        $translator->addResource('yaml', __DIR__ . '/trans/' . $filename, $locale);
-    }
-
-    return $translator;
-}));
-
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => __DIR__ . '/views',
     'twig.options' => array(
-        'cache' => __DIR__ . '/cache/twig',
-        'debug' => $app['debug']
+        'cache' => __DIR__ . '/cache/' . (isset($env) ? $env : 'prod') . '/twig',
+        'debug' => $app['debug'],
+        // 'strict_variables' => false
     )
 ));
 
-//Form support, see http://silex.sensiolabs.org/doc/providers/form.html
-$app->register(new Silex\Provider\FormServiceProvider());
+// if ($app['debug']) {
+//     $app['twig']->addExtension(new Digitas\Rush\Twig\Extension\Filler());
+// }
 
-/*
-//Validators support, see http://silex.sensiolabs.org/doc/providers/validator.html
-$app->register(new Silex\Provider\ValidatorServiceProvider());
- */
+$app->register(new Digex\Provider\ModelServiceProvider());
 
-/*
-//Log support, see http://silex.sensiolabs.org/doc/providers/monolog.html
-$app->register(new Silex\Provider\MonologServiceProvider(), array(
-    'monolog.logfile'       => __DIR__ . '/logs/app.log',
-    'monolog.name'          => 'app'
-));
- */
 
-/*
-//Mailing support, see http://silex.sensiolabs.org/doc/providers/swiftmailer.html
-$app->register(new Silex\Provider\SwiftmailerServiceProvider());
- */
-
-//Set locale
-$app->before(function() use ($app) {
-    $locale = $app['request']->get('_locale');
-    if ($locale) {
-        if (!isset($app['config']['translator']['locales'][$locale]) && $locale != $app['config']['translator']['locale_fallback']) {
-            throw new Symfony\Component\HttpKernel\Exception\NotFoundHttpException(sprintf('Locale "%s" is not supported', $locale));
-        }
-        $app['twig']->addGlobal('locale', $locale);
-    }
-});
+$app->register(new Digitas\Demo\Model\DefaultModelProvider());
 
 //Register your controllers here...
 $app->mount('/', new Digitas\Demo\Controller\DefaultControllerProvider());

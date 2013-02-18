@@ -1,6 +1,6 @@
 <?php
 
-namespace Digitas\Demo\Controller;
+namespace Digitas\Total\Controller;
 
 use Silex\Application;
 use Silex\ControllerProviderInterface;
@@ -19,7 +19,7 @@ class DefaultControllerProvider implements ControllerProviderInterface
 
         $controllers->get('/', function() use ($app, $models) {
 
-            return $app['twig']->render('Demo/hello.html.twig', (array)$models->get('hello'));
+            return $app['twig']->render('Demo/hello.html.twig', $models->get('hello'));
         });
 
         return $controllers;

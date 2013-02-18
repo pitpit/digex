@@ -1,0 +1,22 @@
+{% extends 'layout.html.twig' %}
+{% block content %}
+      <!-- Jumbotron -->
+      <div class="jumbotron">
+        <h1>{{ title }}</h1>
+        <p class="lead">{{ head }}</p>
+        <a class="btn btn-large btn-success" href="#">Get started today</a>
+      </div>
+
+      <hr>
+
+      <!-- Example row of columns -->
+      <div class="row-fluid">
+        {% for item in articles %}
+        <div class="span4">
+          <h2>{{ item.title }}</h2>
+          <p>{{ item.head }}</p>
+          <p><a class="btn" href="#">View details &raquo;</a></p>
+        </div>
+        {% endfor %}
+      </div>
+{% endblock %}
