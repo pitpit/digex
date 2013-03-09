@@ -14,12 +14,12 @@ Copyright (c) 2011-2012, Digitas France
 
 All rights reserved.
 
-Licence
+License
 -------
 
 Digex is released under the 3-clause BSD licence.
 
-Please read the LICENCE file.
+Please read the LICENSE file.
 
 Authors
 -------
