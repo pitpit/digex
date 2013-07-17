@@ -2,7 +2,7 @@
     "name": "digitas/digex",
     "type": "application",
     "description": "A sandbox for Silex, by Digitas France",
-    "license": "BSD-3",
+    "license": "BSD-3-Clause",
     "authors": [
         {"name": "Damien Pitard", "email": "dpitard@digitas.fr"},
         {"name": "Pierre-Louis Launay", "email": "pllaunay@digitas.com"}
