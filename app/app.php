@@ -24,6 +24,35 @@ $app->register(new Silex\Provider\FormServiceProvider());
 
 $app->register(new Silex\Provider\ValidatorServiceProvider());
 
+
+$app->register(new Silex\Provider\SessionServiceProvider());
+
+$app->register(new Silex\Provider\SecurityServiceProvider());
+
+$app['security.firewalls'] = array(
+    'unsecured' => array(
+        'pattern' => '^/admin/login$',
+        'anonymous' => true,
+    ),
+    'admin' => array(
+        'pattern' => '^/admin',
+        'form' => array(
+            'login_path' => '/admin/login',
+            'check_path' => '/admin/login_check'
+        ),
+        'logout' => array(
+            'logout_path' => '/admin/logout',
+        ),
+        'users' => array(
+            'admin' => array('ROLE_ADMIN', $app['config']['security']['admin_password']),
+        )
+    ),
+);
+
+$app['security.role_hierarchy'] = array(
+    'ROLE_ADMIN' => array('ROLE_USER', 'ROLE_ALLOWED_TO_SWITCH')
+);
+
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => __DIR__ . '/views',
     'twig.options' => array(
@@ -38,5 +67,7 @@ $app->before(function () use ($app) {
 
 //Register your controllers here...
 $app->mount('/', new Digitas\Demo\Controller\DefaultControllerProvider());
+$app->mount('/admin', new Digitas\Admin\Controller\SecurityControllerProvider());
+$app->mount('/admin', new Digitas\Admin\Controller\DefaultControllerProvider());
 
 return $app;

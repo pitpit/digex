@@ -13,3 +13,7 @@ translator:
   locale_fallback: en_UK
   locales:
     fr_FR: fr_FR.yml
+
+security:
+  #password: foo
+  admin_password: 5FZ2Z8QIkA7UTZ4BYkoC+GsReLf569mSKDsfods6LYQ8t+a8EW9oaircfMpmaLbPBh4FOBiiFyLfuZmTSUwzZg==

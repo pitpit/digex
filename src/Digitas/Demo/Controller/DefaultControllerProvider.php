@@ -21,16 +21,16 @@ class DefaultControllerProvider implements ControllerProviderInterface
         //dispatch
         $controllers->get('/', function() use ($app) {
 
-            return $app->redirect($app['url_generator']->generate('homepage', array('_locale' => $app['locale_fallback'])));
+            return $app->redirect($app['url_generator']->generate('home', array('_locale' => $app['locale_fallback'])));
         });
 
-        //homepage
+        /* homepage */
         $controllers->get('/{_locale}', function($_locale) use ($app) {
 
             return $app['twig']->render('Demo/Default/homepage.html.twig');
-        })->bind('homepage');
+        })->bind('home');
 
-        //create a new user
+        /* create a new user*/
         $controllers->match('/{_locale}/user/_new', function($_locale) use ($app) {
 
             $user = new User();
