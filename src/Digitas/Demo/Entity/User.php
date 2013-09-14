@@ -2,36 +2,49 @@
 
 namespace Digitas\Demo\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 /**
  * @author Damien Pitard <dpitard at digitas dot fr>
  * @copyright Digitas France
  *
- * @Entity(repositoryClass="Digitas\Demo\Entity\UserRepository")
- * @Table(
- *   name="user"
+ * @ORM\Entity(repositoryClass="Digitas\Demo\Entity\UserRepository")
+ * @ORM\Table(
+ *   name="user",
+ *   uniqueConstraints={
+ *       @ORM\UniqueConstraint(name="email_idx",columns={"email"})
+ *   }
  * )
  */
 class User
 {
     /**
-     * @Id
-     * @Column(type="integer")
-     * @GeneratedValue(strategy="AUTO")
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
-    
+
     /**
-     * @Column(type="text", length=255)
+     * @ORM\Column(type="text", length=255)
+     * @Assert\Email()
+     * @Assert\NotBlank(message = "Email can't be blank")
+     * @Assert\MaxLength(255)
      */
     protected $email;
 
     /**
-     * @Column(type="text", length=80)
+     * @ORM\Column(type="text", length=80)
+     * @Assert\NotBlank(message = "Firstname can't be blank")
+     * @Assert\MaxLength(80)
      */
     protected $firstname;
 
     /**
-     * @Column(type="text", length=80)
+     * @ORM\Column(type="text", length=80)
+     * @Assert\NotBlank(message = "Firstname can't be blank")
+     * @Assert\MaxLength(80)
      */
     protected $lastname;
 

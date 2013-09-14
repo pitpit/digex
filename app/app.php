@@ -6,21 +6,28 @@ require __DIR__ . '/common.php';
 
 $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
 
+$app['locale'] = $app['config']['translator']['default'];
+
 $app->register(new Silex\Provider\TranslationServiceProvider(), array(
-    'locale_fallback' => $app['config']['translator']['locale_fallback']
+    'locale_fallback' => $app['config']['translator']['default']
 ));
 
-$app['translator'] = $app->share($app->extend('translator', function($translator, $app) use($app) {
+$app['translator'] = $app->share($app->extend('translator', function($translator, $app) {
     $translator->addLoader('yaml', new Symfony\Component\Translation\Loader\YamlFileLoader());
 
-    foreach ($app['config']['translator']['locales'] as $locale => $filename) {
-        $translator->addResource('yaml', __DIR__ . '/trans/' . $filename, $locale);
+    $filename = __DIR__ . '/trans/' . $app['locale'] . '.yml';
+    if (file_exists($filename)) {
+        $translator->addResource('yaml', $filename, $app['locale']);
     }
 
     return $translator;
 }));
 
 $app->register(new Silex\Provider\FormServiceProvider());
+
+$app->register(new Silex\Provider\ValidatorServiceProvider());
+
+$app->register(new Digex\Provider\AnnotationValidatorServiceProvider());
 
 $app->register(new Silex\Provider\SessionServiceProvider());
 
@@ -59,8 +66,16 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 ));
 
 $app->before(function () use ($app) {
-    $app['twig']->addGlobal('_locale', $app['request']->getLocale());
+
+    if (!in_array($app['locale'], $app['config']['translator']['allowed'])) {
+        throw new \Exception(sprintf('Locale "%s" is not allowed. see "translator.allowed" in app/config.yml.', $app['locale']));
+    }
+
     $app['twig']->addGlobal('app', $app);
+
+    //you should prefer to user {{ app.local }} in twig
+    //but it's here for BC
+    $app['twig']->addGlobal('_locale', $app['request']->getLocale());
 });
 
 //Register your controllers here...

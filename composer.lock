@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "64fc54a75dc1ea019aa82138392f09ea",
+    "hash": "ad21fd0b203d13229c43430cd9a31180",
     "packages": [
         {
             "name": "digitas/digex-core",

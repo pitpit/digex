@@ -10,9 +10,8 @@ em:
   fixtures:  [src/Digitas/Demo/DataFixtures/ORM]
 
 translator:
-  locale_fallback: en_UK
-  locales:
-    fr_FR: fr_FR.yml
+  default: en
+  allowed: [en, fr]
 
 security:
   #password: foo
