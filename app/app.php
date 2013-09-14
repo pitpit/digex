@@ -22,9 +22,6 @@ $app['translator'] = $app->share($app->extend('translator', function($translator
 
 $app->register(new Silex\Provider\FormServiceProvider());
 
-$app->register(new Silex\Provider\ValidatorServiceProvider());
-
-
 $app->register(new Silex\Provider\SessionServiceProvider());
 
 $app->register(new Silex\Provider\SecurityServiceProvider());
@@ -63,6 +60,7 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 
 $app->before(function () use ($app) {
     $app['twig']->addGlobal('_locale', $app['request']->getLocale());
+    $app['twig']->addGlobal('app', $app);
 });
 
 //Register your controllers here...
