@@ -30,7 +30,6 @@
         "symfony/validator": "2.1.*"
     },
     "recommend": {
-        "digitas/prepush": "dev-master",
         "monolog/monolog": "1.0.*",
         "swiftmailer/swiftmailer": "dev-master",
         "symfony/doctrine-bridge": "2.1.*",
@@ -38,7 +37,6 @@
     },
     "autoload": {
         "psr-0": {
-            "Prepush": "vendor/digitas/prepush/src",
             "": "src/"
         }
     }
