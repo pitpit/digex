@@ -27,7 +27,7 @@ class DefaultControllerProvider implements ControllerProviderInterface
         //homepage
         $controllers->get('/{_locale}', function($_locale) use ($app) {
 
-            return $app['twig']->render('Demo/homepage.html.twig');
+            return $app['twig']->render('Demo/Default/homepage.html.twig');
         })->bind('homepage');
 
         //create a new user
@@ -47,7 +47,7 @@ class DefaultControllerProvider implements ControllerProviderInterface
                 }
             }
 
-            return $app['twig']->render('Demo/new.html.twig', array(
+            return $app['twig']->render('Demo/Default/new.html.twig', array(
                 'form' => $form->createView()
             ));
         })->bind('new_user');
@@ -66,7 +66,7 @@ class DefaultControllerProvider implements ControllerProviderInterface
                 }
             }
 
-            return $app['twig']->render('Demo/user.html.twig', array(
+            return $app['twig']->render('Demo/Default/user.html.twig', array(
                 'users' => $users,
                 'current_user' => $current
             ));

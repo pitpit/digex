@@ -7,3 +7,4 @@
 'Just run the following commands to set up your database:': 'Executez les commandes suivante pour configurer la base de donnée :'
 "Then follow this <a href='%link%'>link</a> to see your data in action.": "Puis suivez <a href='%link%'>ce lien</a> pour tester."
 'Forms': 'Formulaires'
+'Your current locale is:': 'Votre locale courante est :'

@@ -1,4 +1,4 @@
-{% extends 'layout.html.twig' %}
+{% extends 'Demo/layout.html.twig' %}
 {% block title %}{{ "It works!"|trans }}{% endblock %}
 
 {% block content %}
@@ -10,14 +10,15 @@
       <li><a href="{{ path('homepage', {'_locale': 'fr_FR'})}}">Français</a></li>
       <li><a href="{{ path('homepage', {'_locale': 'en_UK'})}}">English</a></li>
     </ul>
+    <p>{{ 'Your current locale is:'|trans }} <strong>{{ _locale }}</strong></p>
   </div>
   <div class="span4">
     <h2>{{ "Database"|trans }}</h2>
     <p>{{ "Thanks to Doctrine, Digex provides the ability to easily map data in PHP and make interoperable queries."|trans }}</p>
     <p>{{ "Just run the following commands to set up your database:"|trans }}</p>
-    <pre>php app/console doctrine:database:create
-php app/console doctrine:schema:create
-php app/console doctrine:fixtures:load</pre>
+    <pre>php bin/console doctrine:database:create
+php bin/console doctrine:schema:create
+php bin/console doctrine:fixtures:load</pre>
      <p>{{ "Then follow this <a href='%link%'>link</a> to see your data in action."|trans({'%link%': path('user')})|raw }}</p>
   </div>
   <div class="span4">

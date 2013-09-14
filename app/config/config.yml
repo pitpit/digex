@@ -3,7 +3,7 @@ db:
   name:   digex
   host:     localhost
   user:     root
-  password: root
+  password:
 
 em:
   entities: [src/Digitas/Demo/Entity]
