@@ -3,13 +3,16 @@ db:
   name:   digex
   host:     localhost
   user:     root
-  password: root
+  password:
 
 em:
   entities: [src/Digitas/Demo/Entity]
   fixtures:  [src/Digitas/Demo/DataFixtures/ORM]
 
 translator:
-  locale_fallback: en_UK
-  locales:
-    fr_FR: fr_FR.yml
+  default: en
+  allowed: [en, fr]
+
+security:
+  #password: foo
+  admin_password: 5FZ2Z8QIkA7UTZ4BYkoC+GsReLf569mSKDsfods6LYQ8t+a8EW9oaircfMpmaLbPBh4FOBiiFyLfuZmTSUwzZg==

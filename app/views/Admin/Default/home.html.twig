@@ -1,0 +1,6 @@
+{% extends 'Admin/layout.html.twig' %}
+{% block content %}
+<h1>{{ "Great, you are in a restricted area !" }}</h1>
+<hr/>
+<a href="{{ path('admin_logout') }}">{{ "Do you want to logout ?"}}</a>
+{% endblock %}

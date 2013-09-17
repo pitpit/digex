@@ -1,0 +1,36 @@
+{% extends 'Demo/layout.html.twig' %}
+{% block title %}{{ "It works!"|trans }}{% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="span4">
+    <h2>{{ "Localization"|trans }}</h2>
+    <p>{{ "Static translation is natively supported by Digex. Please try the language switcher below:"|trans }}</p>
+    <ul>
+      <li><a href="{{ path('home', {'_locale': 'fr'})}}">Français</a></li>
+      <li><a href="{{ path('home', {'_locale': 'en'})}}">English</a></li>
+    </ul>
+    <p>{{ 'Your current locale is:'|trans }} <strong>{{ _locale }}</strong></p>
+  </div>
+  <div class="span4">
+    <h2>{{ "Database"|trans }}</h2>
+    <p>{{ "Thanks to Doctrine, Digex provides the ability to easily map data in PHP and make interoperable queries."|trans }}</p>
+    <p>{{ "Just run the following commands to set up your database:"|trans }}</p>
+    <pre>php bin/console doctrine:database:create
+php bin/console doctrine:schema:create
+php bin/console doctrine:fixtures:load</pre>
+     <p>{{ "Then follow this <a href='%link%'>link</a> to see your data in action."|trans({'%link%': path('user')})|raw }}</p>
+  </div>
+  <div class="span4">
+    <h2>Forms</h2>
+    <p>{{ "Here's a demo of form with validators:"|trans }}</p>
+    <a class="btn btn-primary" href="{{ path('new_user') }}">{{ "Create user"|trans }}</a>
+  </div>
+</div>
+<div class="row">
+  <div class="offset4 span4">
+    <h2>{{ "Security"|trans }}</h2>
+    <p>{{ "Digex support provide user authentication and restriction system."|trans }} <a href="{{ path('admin_home') }}">{{ "Go to the restricted area." }}</a></p>
+  </div>
+</div>
+{% endblock %}

@@ -21,16 +21,16 @@ class DefaultControllerProvider implements ControllerProviderInterface
         //dispatch
         $controllers->get('/', function() use ($app) {
 
-            return $app->redirect($app['url_generator']->generate('homepage', array('_locale' => $app['locale_fallback'])));
+            return $app->redirect($app['url_generator']->generate('home', array('_locale' => $app['locale_fallback'])));
         });
 
-        //homepage
+        /* homepage */
         $controllers->get('/{_locale}', function($_locale) use ($app) {
 
-            return $app['twig']->render('Demo/homepage.html.twig');
-        })->bind('homepage');
+            return $app['twig']->render('Demo/Default/homepage.html.twig');
+        })->bind('home');
 
-        //create a new user
+        /* create a new user*/
         $controllers->match('/{_locale}/user/_new', function($_locale) use ($app) {
 
             $user = new User();
@@ -47,7 +47,7 @@ class DefaultControllerProvider implements ControllerProviderInterface
                 }
             }
 
-            return $app['twig']->render('Demo/new.html.twig', array(
+            return $app['twig']->render('Demo/Default/new.html.twig', array(
                 'form' => $form->createView()
             ));
         })->bind('new_user');
@@ -66,7 +66,7 @@ class DefaultControllerProvider implements ControllerProviderInterface
                 }
             }
 
-            return $app['twig']->render('Demo/user.html.twig', array(
+            return $app['twig']->render('Demo/Default/user.html.twig', array(
                 'users' => $users,
                 'current_user' => $current
             ));
