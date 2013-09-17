@@ -78,7 +78,8 @@ $app->before(function () use ($app) {
     $app['twig']->addGlobal('_locale', $app['request']->getLocale());
 });
 
-//Register your controllers here...
+/** CUSTOMIZE HERE **/
+
 $app->mount('/', new Digitas\Demo\Controller\DefaultControllerProvider());
 $app->mount('/admin', new Digitas\Admin\Controller\SecurityControllerProvider());
 $app->mount('/admin', new Digitas\Admin\Controller\DefaultControllerProvider());

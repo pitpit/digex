@@ -9,35 +9,36 @@
     ],
     "require": {
         "php": ">=5.3.0",
-        "silex/silex": "~1.0",
-        "digitas/digex-core": "dev-master",
+        "silex/silex": "1.0.*@dev",
+        "digitas/digex-core": "1.2.*@dev",
         "doctrine/dbal": "2.2.*",
         "doctrine/orm": "2.2.*",
-        "doctrine/data-fixtures": "dev-master",
+        "doctrine/data-fixtures": "1.0.*",
+        "symfony/doctrine-bridge": "2.1.*",
         "symfony/translation": "2.1.*",
         "symfony/twig-bridge": "2.1.*",
         "twig/twig": "1.9.*",
         "symfony/config": "2.0.*",
-        "symfony/form": "2.1.*"
-    },
-    "require-dev": {
-        "imagine/imagine": "dev-develop",
+        "symfony/form": "2.1.*",
         "monolog/monolog": "1.0.*",
-        "swiftmailer/swiftmailer": "dev-master",
-        "symfony/browser-kit": "2.1.*",
-        "symfony/finder": "2.1.*",
         "symfony/security": "2.1.*",
         "symfony/validator": "2.1.*"
     },
+    "require-dev": {
+        "symfony/browser-kit": "2.1.*",
+        "symfony/finder": "2.1.*"
+    },
     "recommend": {
-        "monolog/monolog": "1.0.*",
-        "swiftmailer/swiftmailer": "dev-master",
-        "symfony/doctrine-bridge": "2.1.*",
-        "symfony/validator": "2.1.*"
+        "swiftmailer/swiftmailer": "5.1.*"
     },
     "autoload": {
         "psr-0": {
             "": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.2.x-dev"
         }
     }
 }

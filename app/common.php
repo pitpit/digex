@@ -37,3 +37,5 @@ $loader = require __DIR__.'/../vendor/autoload.php';
 Doctrine\Common\Annotations\AnnotationRegistry::registerLoader(array($loader, 'loadClass'));
 
 $app->register(new Digex\Provider\AnnotationReaderServiceProvider());
+
+/** CUSTOMIZE HERE **/
