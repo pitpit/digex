@@ -27,7 +27,7 @@ class DefaultControllerProvider implements ControllerProviderInterface
         /* homepage */
         $controllers->get('/{_locale}', function($_locale) use ($app) {
 
-            return $app['twig']->render('Demo/Default/homepage.html.twig');
+            return $app['twig']->render('Demo/Default/home.html.twig');
         })->bind('home');
 
         /* create a new user*/

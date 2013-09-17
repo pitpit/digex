@@ -1,17 +1,5 @@
 #!/usr/bin/env php
 <?php
 
-umask(0000); //This will let the permissions be 0777
-set_time_limit(0);
-
-require_once __DIR__.'/../vendor/autoload.php';
-
-$input = new \Symfony\Component\Console\Input\ArgvInput();
-$debug = !$input->hasParameterOption(array('--no-debug', ''));
-$env = $input->getParameterOption(array('--env', '-e'), getenv('SYMFONY_ENV') ?: 'dev');
-
-$app = new Silex\Application();
-$app->register(new Digex\Provider\ConsoleServiceProvider());
-require __DIR__.'/../app/common.php';
-
+$app = require __DIR__.'/../app/app.php';
 $app['console']->run();

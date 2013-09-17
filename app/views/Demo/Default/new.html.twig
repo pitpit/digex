@@ -8,7 +8,7 @@
         <form action="{{ path('new_user') }}" class="form-vertical" method="post">
             {{ form_widget(form) }}
             <button id="btn-create" type="submit" class="btn btn-primary">{{ "Create"|trans }}</button>
-            <button id="btn-cancel" class="btn" data-dismiss="modal">{{ "Cancel"|trans }}</button>
+            <a href="{{ path('home') }}" id="btn-cancel" class="btn" >{{ "Cancel"|trans }}</a>
       </form>
     </div>
 </div>
