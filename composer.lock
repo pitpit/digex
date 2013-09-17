@@ -3,28 +3,39 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "c77a7576b8130a9d3aada3037728aff9",
+    "hash": "d5c1d0310464c501e7a2ca45838fbcb6",
     "packages": [
         {
             "name": "digitas/digex-core",
-            "version": "1.2.x-dev",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/digitas/digex-core.git",
-                "reference": "462b673a0193c73999e649cbba99bdb27d0c6447"
+                "reference": "fcb20e8555dd7681f0988012acedc30796e1afc4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/digitas/digex-core/zipball/462b673a0193c73999e649cbba99bdb27d0c6447",
-                "reference": "462b673a0193c73999e649cbba99bdb27d0c6447",
+                "url": "https://api.github.com/repos/digitas/digex-core/zipball/fcb20e8555dd7681f0988012acedc30796e1afc4",
+                "reference": "fcb20e8555dd7681f0988012acedc30796e1afc4",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.2",
-                "symfony/console": ">=2.1,<=2.2",
-                "symfony/yaml": "2.1.*"
+                "php": ">=5.3.2"
+            },
+            "suggest": {
+                "doctrine/data-fixtures": "1.0.* | If you want to enable fixtures load command (LoadDataFixturesDoctrineCommand)",
+                "doctrine/orm": "2.2.* | If you want to enable Doctrine ORM service (DoctrineORMServiceProvider)",
+                "symfony/console": ">=2.1,<=2.2 | If you want to enable console service (ConsoleServiceProvider)",
+                "symfony/validator": "2.1.* | If you want to enable validation annotations (AnnotationValidatorServiceProvider)",
+                "symfony/yaml": "2.1.* | If you want to enable configuration service (ConfigurationServiceProvider)",
+                "twig/twig": "1.9.* | If you want to enable asset twig function (AssetServiceProvider)"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2.x-dev"
+                }
+            },
             "autoload": {
                 "psr-0": {
                     "Digex": "src/"
@@ -42,10 +53,14 @@
                 {
                     "name": "Pierre-Louis Launay",
                     "email": "pllaunay@digitas.com"
+                },
+                {
+                    "name": "Stephane El Manouni",
+                    "email": "selmanouni@digitas.fr"
                 }
             ],
             "description": "Core library for Digex",
-            "time": "2013-09-17 08:20:52"
+            "time": "2013-09-17 09:02:39"
         },
         {
             "name": "doctrine/common",
@@ -541,56 +556,6 @@
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
             "time": "2013-03-01 06:43:14"
-        },
-        {
-            "name": "symfony/doctrine-bridge",
-            "version": "v2.1.12",
-            "target-dir": "Symfony/Bridge/Doctrine",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/DoctrineBridge.git",
-                "reference": "181d2055637781b0ab33b600fd9fbab928d2c818"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/DoctrineBridge/zipball/181d2055637781b0ab33b600fd9fbab928d2c818",
-                "reference": "181d2055637781b0ab33b600fd9fbab928d2c818",
-                "shasum": ""
-            },
-            "require": {
-                "doctrine/common": ">=2.2,<2.4-dev",
-                "php": ">=5.3.3"
-            },
-            "suggest": {
-                "doctrine/data-fixtures": "1.0.*",
-                "doctrine/dbal": ">=2.2,<2.4-dev",
-                "doctrine/orm": ">=2.2.3,<2.4-dev",
-                "symfony/form": "2.1.*",
-                "symfony/validator": "2.1.*"
-            },
-            "type": "symfony-bridge",
-            "autoload": {
-                "psr-0": {
-                    "Symfony\\Bridge\\Doctrine": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "http://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony Doctrine Bridge",
-            "homepage": "http://symfony.com",
-            "time": "2013-05-26 18:42:07"
         },
         {
             "name": "symfony/event-dispatcher",
