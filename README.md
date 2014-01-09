@@ -26,3 +26,7 @@ Authors
 
 * Damien Pitard (dpitard@digitas.fr)
 * Pierre-Louis Launay (pllaunay@digitas.fr)
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/pitpit/digex/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
